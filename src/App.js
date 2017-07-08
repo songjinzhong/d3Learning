@@ -3,6 +3,7 @@ import * as d3 from "d3";
 import './App.css';
 
 import RenderArray from './components/RenderArray.js'
+import RenderRect from './components/RenderRect.js'
 
 class App extends Component {
 
@@ -25,6 +26,7 @@ class App extends Component {
                 <div id="circle"></div>
                 <h2>RenderArray</h2>
                 <RenderArray></RenderArray>
+                <RenderRect></RenderRect>
 			</div>
 		);
 	}
