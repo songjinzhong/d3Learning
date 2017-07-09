@@ -5,6 +5,7 @@ import './App.css';
 import RenderArray from './components/RenderArray.js'
 import RenderRect from './components/RenderRect.js'
 import RenderProportion from './components/RenderProportion.js'
+import RenderCoordinate from './components/RenderCoordinate.js'
 
 class App extends Component {
 
@@ -31,6 +32,8 @@ class App extends Component {
                 <RenderRect></RenderRect>
                 <h2>Proportion</h2>
                 <RenderProportion/>
+                <h2>Coordinate</h2>
+                <RenderCoordinate/>
 			</div>
 		);
 	}
