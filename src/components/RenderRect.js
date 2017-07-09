@@ -9,6 +9,7 @@ export default class RenderRect extends Component {
             .append("svg")
             .attr("width", width)
             .attr("height", height)
+        window.svg = svg
         var dataset = [ 250 , 210 , 170 , 130 , 90 ];  //数据（表示矩形的宽度）
         var rectHeight = 25;   //每个矩形所占的像素高度(包括空白)
         
@@ -16,7 +17,7 @@ export default class RenderRect extends Component {
             .data(dataset)
             .enter()
             .append("rect")
-            .attr("x",20)
+            .attr("x",0)
             .attr("y",function(d,i){
                 return i * rectHeight;
             })

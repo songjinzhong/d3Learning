@@ -4,6 +4,7 @@ import './App.css';
 
 import RenderArray from './components/RenderArray.js'
 import RenderRect from './components/RenderRect.js'
+import RenderProportion from './components/RenderProportion.js'
 
 class App extends Component {
 
@@ -26,7 +27,10 @@ class App extends Component {
                 <div id="circle"></div>
                 <h2>RenderArray</h2>
                 <RenderArray></RenderArray>
+                <h2>RenderRect</h2>
                 <RenderRect></RenderRect>
+                <h2>Proportion</h2>
+                <RenderProportion/>
 			</div>
 		);
 	}
