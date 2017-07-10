@@ -6,6 +6,7 @@ import RenderArray from './components/RenderArray.js'
 import RenderRect from './components/RenderRect.js'
 import RenderProportion from './components/RenderProportion.js'
 import RenderCoordinate from './components/RenderCoordinate.js'
+import RenderColumn from './components/RenderColumn.js'
 
 class App extends Component {
 
@@ -34,6 +35,8 @@ class App extends Component {
                 <RenderProportion/>
                 <h2>Coordinate</h2>
                 <RenderCoordinate/>
+                <h2>Column</h2>
+                <RenderColumn/>
 			</div>
 		);
 	}
