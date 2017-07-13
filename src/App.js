@@ -8,6 +8,7 @@ import RenderProportion from './components/RenderProportion.js'
 import RenderCoordinate from './components/RenderCoordinate.js'
 import RenderColumn from './components/RenderColumn.js'
 import Dymatic from './components/Dymatic.js'
+import PieChart from './components/PieChart.js'
 
 class App extends Component {
 
@@ -40,6 +41,8 @@ class App extends Component {
                 <RenderColumn/>
                 <h2>Dymatic</h2>
                 <Dymatic/>
+                <h2>PieChart</h2>
+                <PieChart/>
 			</div>
 		);
 	}
