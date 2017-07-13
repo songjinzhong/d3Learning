@@ -44,13 +44,27 @@ export default class RenderColumn extends React.Component {
                 return xScale(i) + rectPadding/2;
             } )
             .attr("y",function(d){
-                return yScale(d);
+                return height - padding.bottom - padding.top
+                // return yScale(d);
             })
             .attr("width", xScale.bandwidth() - rectPadding )
             .attr("height", function(d){
-                return height - padding.top - padding.bottom - yScale(d);
+                return 0
+                // return height - padding.top - padding.bottom - yScale(d);
             })
             .attr("fill", "orange")
+            .transition()
+            .delay((d, i)=>{
+                return i*1000
+            })
+            .duration(2000)
+            // .ease("bounce")
+            .attr("height", function(d){
+                return height - padding.top - padding.bottom - yScale(d)
+            })
+            .attr("y", (d) => {
+                return yScale(d)
+            })
  
         //添加文字元素
         svg.selectAll(".MyText")
@@ -63,17 +77,22 @@ export default class RenderColumn extends React.Component {
                 return xScale(i) + bandwidth/3;
             } )
             .attr("y",function(d){
-                return yScale(d);
+                // return yScale(d);
+                const min = yScale.domain()[0]
+                return yScale(min)
             })
-            // .attr("dx",function(){
-            //     return (xScale.bandwidth() - rectPadding)/2;
-            // })
-            // .attr("dy",function(d){
-            //     return 20;
-            // })
             .text(function(d){
                 return d;
-            });
+            })
+            .transition()
+            .delay((d, i)=>{
+                return i*1000
+            })
+            .duration(2000)
+            // .ease("bounce")
+            .attr("y", function(d){
+                return yScale(d)
+            })
         // 添加x轴
         svg.append("g")
         .attr("class","axis")
