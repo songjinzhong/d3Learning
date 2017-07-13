@@ -7,6 +7,7 @@ import RenderRect from './components/RenderRect.js'
 import RenderProportion from './components/RenderProportion.js'
 import RenderCoordinate from './components/RenderCoordinate.js'
 import RenderColumn from './components/RenderColumn.js'
+import Dymatic from './components/Dymatic.js'
 
 class App extends Component {
 
@@ -37,6 +38,8 @@ class App extends Component {
                 <RenderCoordinate/>
                 <h2>Column</h2>
                 <RenderColumn/>
+                <h2>Dymatic</h2>
+                <Dymatic/>
 			</div>
 		);
 	}
