@@ -53,6 +53,15 @@ export default class RenderColumn extends React.Component {
                 // return height - padding.top - padding.bottom - yScale(d);
             })
             .attr("fill", "orange")
+            .on("mouseover", ()=>{
+                console.log(this)
+                d3.select(d3.event.target)
+                    .attr("fill", "red")
+            })
+            .on("mouseout", ()=>{
+                d3.select(d3.event.target)
+                    .attr("fill", "orange")
+            })
             .transition()
             .delay((d, i)=>{
                 return i*1000
