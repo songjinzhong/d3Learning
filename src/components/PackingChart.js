@@ -15,7 +15,6 @@ export default class PackingChart extends React.Component {
             })
         const nodes = d3.hierarchy(city)
         const city_nodes = pack(nodes).descendants()
-        console.log(city_nodes)
 
         svg.selectAll("text")
             .data(city_nodes)
