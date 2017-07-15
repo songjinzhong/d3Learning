@@ -54,7 +54,6 @@ export default class RenderColumn extends React.Component {
             })
             .attr("fill", "orange")
             .on("mouseover", ()=>{
-                console.log(this)
                 d3.select(d3.event.target)
                     .attr("fill", "red")
             })

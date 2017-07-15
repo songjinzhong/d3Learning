@@ -7,7 +7,7 @@ export default class PieChart extends React.Component {
         const width = 400
         const height = 400
         const svg = RenderSvg("#piechart", width, height)
-        const dataSet = [ 30 , 10 , 43 , 55 , 13 ]
+        const dataSet = [ 20 , 20 , 33 , 55 , 23 ]
         const pie = d3.pie()
         const pieData = pie(dataSet)
         const outerRadius = 150
@@ -15,7 +15,9 @@ export default class PieChart extends React.Component {
         const arc = d3.arc()
             .innerRadius(innerRadius)
             .outerRadius(outerRadius)
-        console.log(arc)
+        const bigArc = d3.arc()
+            .innerRadius(innerRadius)
+            .outerRadius(outerRadius + 5)
         const colorArr = d3.schemeCategory10
         const arcs = svg.selectAll("g")
             .data(pieData)
@@ -28,7 +30,19 @@ export default class PieChart extends React.Component {
             })
             .attr("d",function(d){
                 return arc(d);   //调用弧生成器，得到路径值
-            });
+            })
+            .on("mouseover", () => {
+                d3.select(d3.event.target)
+                    .attr("d", (d) => {
+                        return bigArc(d)
+                    })
+            })
+            .on("mouseout", () => {
+                d3.select(d3.event.target)
+                    .attr("d", (d) => {
+                        return arc(d)
+                    })
+            })
 
         arcs.append("text")
             .attr("transform",function(d){

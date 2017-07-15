@@ -9,6 +9,7 @@ import RenderCoordinate from './components/RenderCoordinate.js'
 import RenderColumn from './components/RenderColumn.js'
 import Dymatic from './components/Dymatic.js'
 import PieChart from './components/PieChart.js'
+import ForceGraph from './components/ForceGraph.js'
 
 class App extends Component {
 
@@ -43,6 +44,8 @@ class App extends Component {
                 <Dymatic/>
                 <h2>PieChart</h2>
                 <PieChart/>
+                <h2>ForceGraph</h2>
+                <ForceGraph />
 			</div>
 		);
 	}
