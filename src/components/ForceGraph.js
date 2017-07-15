@@ -15,7 +15,6 @@ export default class ForceGraph extends React.Component {
             nodes = d3.range(n).map(function(i) { return {index: i}; }),
             links = d3.range(n).map(function(i) { return {source: i, target: (i + 3) % n}; });
 
-        console.log(nodes, links)
         const simulation = d3.forceSimulation(nodes)
             .force("charge", d3.forceManyBody().strength(-80))
             .force("link", d3.forceLink(links).distance(20).strength(1))
@@ -24,9 +23,7 @@ export default class ForceGraph extends React.Component {
             .stop()
           for (var i = 0, nn = Math.ceil(Math.log(simulation.alphaMin()) / Math.log(1 - simulation.alphaDecay())); i < nn; ++i) {
                 simulation.tick();
-                console.log(i)
             }
-        console.log(nodes, links)
         svg.append("g")
             .attr("stroke", "red")
             .attr("stroke-width", 1.5)

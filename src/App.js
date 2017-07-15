@@ -10,6 +10,7 @@ import RenderColumn from './components/RenderColumn.js'
 import Dymatic from './components/Dymatic.js'
 import PieChart from './components/PieChart.js'
 import ForceGraph from './components/ForceGraph.js'
+import PackingChart from './components/PackingChart'
 
 class App extends Component {
 
@@ -46,6 +47,8 @@ class App extends Component {
                 <PieChart/>
                 <h2>ForceGraph</h2>
                 <ForceGraph />
+                <h2>PackingChart</h2>
+                <PackingChart/>
 			</div>
 		);
 	}
