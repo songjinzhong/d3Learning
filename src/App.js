@@ -27,9 +27,7 @@ class App extends Component {
 	render() {
 		return (
 			<div className="App">
-				<div className="App-header">
-					<h2>This is a d3-demo!</h2>
-				</div>
+                <h2>This is a d3-demo!</h2>
 				<div className="d3"></div>
                 <div id="circle"></div>
                 <h2>RenderArray</h2>
